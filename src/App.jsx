@@ -1,11 +1,11 @@
 import Counter from "./components/counter"
-import List from "./components/mobx-computed"
+import Computed from "./components/computed"
 
 function App () {
   return (
     <div className="App">
       <Counter />
-      <List />
+      <Computed />
     </div>
   )
 }

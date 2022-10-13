@@ -8,7 +8,7 @@
 
 import { computed, makeAutoObservable } from 'mobx'
 
-class ListStore {
+class ComputedStore {
   // 1. 声明一个存在的数据
   list = [1, 2, 3, 4, 5, 6]
   constructor() {
@@ -27,5 +27,5 @@ class ListStore {
   }
 }
 
-const listStore = new ListStore()
-export default listStore
+const computedStore = new ComputedStore()
+export default computedStore
