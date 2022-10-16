@@ -10,19 +10,21 @@ import { useStore } from '../store'
 import { observer } from 'mobx-react-lite'
 
 function MoKuaiHua () {
-  const store = useStore()
+  // 注意：解构赋值 到store实例对象就可以了
+  // 防止破坏响应式 用哪个store就结构哪个store
+  const { listStore, counterStore } = useStore()
   return (
     <div className="MoKuaiHua">
-      <button onClick={() => store.counterStore.addCount()}>
-        {store.counterStore.count}
+      <button onClick={() => counterStore.addCount()}>
+        {counterStore.count}
       </button>
       <ul>
-        {store.listStore.list.map(item =>
+        {listStore.list.map(item =>
           <li key={item.id}>{item.name}</li>
         )}
       </ul>
-      <button onClick={() => store.listStore.addList()}>change list</button>
-      <button onClick={() => store.listStore.logList()}>log list</button>
+      <button onClick={() => listStore.addList()}>change list</button>
+      <button onClick={() => listStore.logList()}>log list</button>
     </div>
   )
 }
